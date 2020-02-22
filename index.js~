@@ -1,0 +1,16 @@
+const express = require('express'); 
+const app = express(); 
+
+app.get('/', (req, res) => {
+	res.send('Hello World'); 
+}); 
+
+app.get('/api/courses/', (req, res) => {
+	res.send([1,2,3]); //in the future replace with course objects
+}); 
+
+// PORT
+// This is the proper way to define a port variable. This is considered good practice because
+// a hardcoded port might not work on production. 
+const port = process.env.PORT || 3000; 
+app.listen(port, () => console.log(`Listening on port ${port}...`)); 
